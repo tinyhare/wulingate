@@ -1,5 +1,3 @@
-// Polyfill for Navigator.clipboard.writeText
-if (!navigator.clipboard) { navigator.clipboard = newClipboard; }
 
 newClipboard = {
     writeText: text => {
@@ -36,3 +34,6 @@ newClipboard = {
 		return success ? Promise.resolve() : false;
     }
 }
+
+// Polyfill for Navigator.clipboard.writeText
+if (!navigator.clipboard) { navigator.clipboard = newClipboard; }
